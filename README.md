@@ -105,7 +105,7 @@ User visits MUDRA
   │  Email Confirmation │      │  Google Sheets Log   │
   │  (if email signup)  │      │  (name, email,       │
   └──────────┬──────────┘      │   login time,        │
-             │ confirmed        │   provider)          │
+             │ confirmed       │   provider)          │
              ▼                 └──────────────────────┘
   ┌─────────────────────┐
   │     Dashboard       │
@@ -133,10 +133,10 @@ User Action (add transaction, set budget, etc.)
   ┌─────────────────────────────────┐
   │         Supabase Backend        │
   │                                 │
-  │  ┌──────────┐  ┌─────────────┐ │
-  │  │   Auth   │  │  PostgreSQL │ │
-  │  │  (users) │  │  Database   │ │
-  │  └──────────┘  └─────────────┘ │
+  │  ┌──────────┐  ┌─────────────┐  │
+  │  │   Auth   │  │  PostgreSQL │  │
+  │  │  (users) │  │  Database   │  │
+  │  └──────────┘  └─────────────┘  │
   │         Row Level Security      │
   │    (each user sees only         │
   │         their own data)         │
@@ -177,7 +177,7 @@ at random positions across viewport
     │  Interpolate note position  │
     │  from: random scatter       │
     │  to:   denomination stacks  │
-    │  (₹10, ₹20, ₹50, ₹100...)  │
+    │  (₹10, ₹20, ₹50, ₹100...)   │
     └─────────────────────────────┘
              │
              ▼
@@ -324,8 +324,6 @@ vercel
 | `VITE_SUPABASE_URL` | Your Supabase project URL |
 | `VITE_SUPABASE_ANON_KEY` | Your Supabase anon key |
 
-> ⚠️ Never commit your `.env` file to GitHub. Add it to `.gitignore`.
-
 ---
 
 ## About me
@@ -362,6 +360,8 @@ Honestly, I am a different person after making this app.
 The idea and design are completely mine. The UI design and implementation were built with the help of Claude AI — but every decision about what to build, how it should look, and what problem it should solve came from me.
 
 If MUDRA helps even one person understand their money better, the mission is successful.
+
+(Small Fact : Mudra is the name of my sister!)
 
 *— Khushi Shah*
 
