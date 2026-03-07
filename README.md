@@ -27,7 +27,7 @@ It gives you one clean, unified place to:
 - Work toward financial goals
 - Manage recurring expenses
 
-The name *MUDRA* is a deliberate choice — it means gesture, currency, and intention all at once. Managing money should feel intentional, not chaotic.
+The name *MUDRA* is a deliberate choice — it means gesture, currency, and intention all at once(basically my sister's name!). Managing money should feel intentional, not chaotic.
 
 ---
 
@@ -105,7 +105,7 @@ User visits MUDRA
   │  Email Confirmation │      │  Google Sheets Log   │
   │  (if email signup)  │      │  (name, email,       │
   └──────────┬──────────┘      │   login time,        │
-             │ confirmed        │   provider)          │
+             │ confirmed       │   provider)          │
              ▼                 └──────────────────────┘
   ┌─────────────────────┐
   │     Dashboard       │
@@ -133,10 +133,10 @@ User Action (add transaction, set budget, etc.)
   ┌─────────────────────────────────┐
   │         Supabase Backend        │
   │                                 │
-  │  ┌──────────┐  ┌─────────────┐ │
-  │  │   Auth   │  │  PostgreSQL │ │
-  │  │  (users) │  │  Database   │ │
-  │  └──────────┘  └─────────────┘ │
+  │  ┌──────────┐  ┌─────────────┐  │
+  │  │   Auth   │  │  PostgreSQL │  │
+  │  │  (users) │  │  Database   │  │
+  │  └──────────┘  └─────────────┘  │
   │         Row Level Security      │
   │    (each user sees only         │
   │         their own data)         │
@@ -177,7 +177,7 @@ at random positions across viewport
     │  Interpolate note position  │
     │  from: random scatter       │
     │  to:   denomination stacks  │
-    │  (₹10, ₹20, ₹50, ₹100...)  │
+    │  (₹10, ₹20, ₹50, ₹100...)   │
     └─────────────────────────────┘
              │
              ▼
@@ -295,7 +295,10 @@ Enable **Row Level Security** on all tables and create policies so users can onl
 
 ## Deployment
 
-The app is built for deployment on **Vercel** (deployment in progress).
+The app is live and deployed on **Vercel**.
+
+🌐 **[https://mudra-finance-g7rp.vercel.app](https://mudra-finance-g7rp.vercel.app)**
+
 
 **When ready to deploy:**
 
@@ -321,27 +324,22 @@ vercel
 | `VITE_SUPABASE_URL` | Your Supabase project URL |
 | `VITE_SUPABASE_ANON_KEY` | Your Supabase anon key |
 
-> ⚠️ Never commit your `.env` file to GitHub. Add it to `.gitignore`.
-
 ---
 
-## About the Developer
+## About me
 
 **Khushi Shah**
 *Creator of MUDRA*
+The idea came from a personal frustration — money was disappearing without explanation, and every existing finance app felt either too complex or too generic.
 
-Khushi is an 18-year-old developer who built MUDRA as her first full-stack web application. The idea came from a personal frustration — money was disappearing without explanation, and every existing finance app felt either too complex or too generic.
-
-MUDRA is her answer to that problem.
+MUDRA is my answer to that problem.
 
 📧 [khushishahs.2006@gmail.com](mailto:khushishahs.2006@gmail.com)
 🐙 [github.com/khushishahs02](https://github.com/khushishahs02)
 
 ---
 
-## A Note from Khushi
-
-*In her own words:*
+## Author's note
 
 ---
 
@@ -363,6 +361,8 @@ The idea and design are completely mine. The UI design and implementation were b
 
 If MUDRA helps even one person understand their money better, the mission is successful.
 
+(Small Fact : Mudra is the name of my sister!)
+
 *— Khushi Shah*
 
 ---
@@ -382,13 +382,3 @@ I'd love to hear from you — whether it's a bug report, a feature idea, or just
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<div align="center">
-
-*Built with curiosity · Powered by coffee · Debugged at 2AM*
-
-**₹ MUDRA — Because your finances deserve order.**
-
-</div>
