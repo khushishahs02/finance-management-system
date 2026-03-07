@@ -84,14 +84,16 @@ export default function Layout() {
         />
       )}
 
-      {/* Mobile sidebar */}
-      <aside style={{
-        ...sidebarStyle,
-        position: 'fixed', inset: '0 auto 0 0', zIndex: 50,
-        transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
-        transition: 'transform 0.3s ease',
-        display: 'flex',
-      }}>
+      {/* Mobile sidebar — only rendered on small screens */}
+      <aside
+        className="lg:hidden"
+        style={{
+          ...sidebarStyle,
+          position: 'fixed', inset: '0 auto 0 0', zIndex: 50,
+          transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.3s ease',
+          display: 'flex',
+        }}>
         <SidebarContent
           profile={profile}
           handleSignOut={handleSignOut}
@@ -112,12 +114,23 @@ export default function Layout() {
         }} className="lg:hidden">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <MudraLogoMark size={26} />
-            <span style={{
-              fontFamily: "'Clash Display', sans-serif", fontWeight: 800,
-              fontSize: '16px', letterSpacing: '3px',
-              background: 'linear-gradient(135deg, #d4a94a, #f5e6c8)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>MUDRA</span>
+            <div>
+              <span style={{
+                fontFamily: "'Clash Display', sans-serif", fontWeight: 800,
+                fontSize: '16px', letterSpacing: '3px',
+                background: 'linear-gradient(135deg, #d4a94a, #f5e6c8)',
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                display: 'block',
+              }}>MUDRA</span>
+              {profile?.name && (
+                <span style={{
+                  fontSize: '10px', color: 'rgba(212,169,74,0.5)',
+                  fontFamily: 'monospace', letterSpacing: '1px',
+                }}>
+                  {profile.name}
+                </span>
+              )}
+            </div>
           </div>
           <button onClick={() => setMobileOpen(o => !o)}
             style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#9090b0', padding: '6px' }}>
@@ -214,7 +227,7 @@ function SidebarContent({ profile, handleSignOut, setMobileOpen }) {
             fontSize: '13px', fontWeight: 600, color: '#e8e8f4',
             whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
             margin: 0,
-          }}>{profile?.name ?? '—'}</p>
+          }}>{profile?.name ?? profile?.email ?? '—'}</p>
         </div>
 
         {/* Sign Out */}

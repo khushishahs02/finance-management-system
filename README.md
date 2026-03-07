@@ -5,10 +5,12 @@
 
 *Because money disappears faster than expected — and Excel sheets are not fun.*
 
+🌐 **Live App → [mudra-finance.vercel.app](https://mudra-finance-g7rp.vercel.app)**
+
 [![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-5-646cff?style=flat-square&logo=vite)](https://vitejs.dev)
 [![Supabase](https://img.shields.io/badge/Supabase-Auth%20%2B%20DB-3ecf8e?style=flat-square&logo=supabase)](https://supabase.com)
-[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com)
+[![Live](https://img.shields.io/badge/Live-mudra--finance-black?style=flat-square&logo=vercel)](https://mudra-finance-g7rp.vercel.app)
 
 </div>
 
@@ -27,7 +29,7 @@ It gives you one clean, unified place to:
 - Work toward financial goals
 - Manage recurring expenses
 
-The name *MUDRA* is a deliberate choice — it means gesture, currency, and intention all at once(basically my sister's name!). Managing money should feel intentional, not chaotic.
+The name *MUDRA* is a deliberate choice — it means gesture, currency, and intention all at once. Managing money should feel intentional, not chaotic.
 
 ---
 
@@ -105,7 +107,7 @@ User visits MUDRA
   │  Email Confirmation │      │  Google Sheets Log   │
   │  (if email signup)  │      │  (name, email,       │
   └──────────┬──────────┘      │   login time,        │
-             │ confirmed       │   provider)          │
+             │ confirmed        │   provider)          │
              ▼                 └──────────────────────┘
   ┌─────────────────────┐
   │     Dashboard       │
@@ -133,10 +135,10 @@ User Action (add transaction, set budget, etc.)
   ┌─────────────────────────────────┐
   │         Supabase Backend        │
   │                                 │
-  │  ┌──────────┐  ┌─────────────┐  │
-  │  │   Auth   │  │  PostgreSQL │  │
-  │  │  (users) │  │  Database   │  │
-  │  └──────────┘  └─────────────┘  │
+  │  ┌──────────┐  ┌─────────────┐ │
+  │  │   Auth   │  │  PostgreSQL │ │
+  │  │  (users) │  │  Database   │ │
+  │  └──────────┘  └─────────────┘ │
   │         Row Level Security      │
   │    (each user sees only         │
   │         their own data)         │
@@ -177,7 +179,7 @@ at random positions across viewport
     │  Interpolate note position  │
     │  from: random scatter       │
     │  to:   denomination stacks  │
-    │  (₹10, ₹20, ₹50, ₹100...)   │
+    │  (₹10, ₹20, ₹50, ₹100...)  │
     └─────────────────────────────┘
              │
              ▼
@@ -248,7 +250,7 @@ finance-app/
 
 ```bash
 # Clone the repository
-git clone https://github.com/khushishahs02/mudra-finance.git   # update with your actual repo URL
+git clone https://github.com/khushishahs02/mudra-finance.git
 cd mudra-finance/finance-app
 
 # Install dependencies
@@ -299,7 +301,6 @@ The app is live and deployed on **Vercel**.
 
 🌐 **[https://mudra-finance-g7rp.vercel.app](https://mudra-finance-g7rp.vercel.app)**
 
-
 **When ready to deploy:**
 
 ```bash
@@ -324,24 +325,11 @@ vercel
 | `VITE_SUPABASE_URL` | Your Supabase project URL |
 | `VITE_SUPABASE_ANON_KEY` | Your Supabase anon key |
 
----
-
-## About me
-
-**Khushi Shah**
-*Creator of MUDRA*
-The idea came from a personal frustration — money was disappearing without explanation, and every existing finance app felt either too complex or too generic.
-
-MUDRA is my answer to that problem.
-
-📧 [khushishahs.2006@gmail.com](mailto:khushishahs.2006@gmail.com)
-🐙 [github.com/khushishahs02](https://github.com/khushishahs02)
+> ⚠️ Never commit your `.env` file to GitHub. Add it to `.gitignore`.
 
 ---
 
-## Author's note
-
----
+## Author's note - Khushi Shah
 
 I started this project primarily to gain hands-on experience — and I honestly did not know much about Claude when I began.
 
@@ -361,10 +349,6 @@ The idea and design are completely mine. The UI design and implementation were b
 
 If MUDRA helps even one person understand their money better, the mission is successful.
 
-(Small Fact : Mudra is the name of my sister!)
-
-*— Khushi Shah*
-
 ---
 
 ## Contact & Feedback
@@ -375,9 +359,15 @@ I'd love to hear from you — whether it's a bug report, a feature idea, or just
 |---|---|
 | 📧 Email | [khushishahs.2006@gmail.com](mailto:khushishahs.2006@gmail.com) |
 | 🐙 GitHub | [github.com/khushishahs02](https://github.com/khushishahs02) |
-| 🐛 Bug Reports | Open an issue on GitHub once the repo is public |
+| 🐛 Bug Reports | [Open an issue](https://github.com/khushishahs02/mudra-finance/issues) |
 
----
+
+## Releases
+
+### v1.0.0 — Initial Release
+**Released:** 2025
+
+First production release of MUDRA Personal Finance Manager.
 
 ## License
 

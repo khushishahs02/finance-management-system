@@ -308,13 +308,14 @@ function HeroSection({ scrollProgress, heroRef }) {
           }}>MUDRA</h1>
         </div>
         <p style={{
-          fontSize:'clamp(13px,1.6vw,17px)',
-          color:'rgba(240,224,190,0.65)',
+          fontSize:'clamp(16px,2vw,22px)',
+          color:'rgba(200,200,210,0.92)',
           fontFamily:"'Cormorant Garamond',Georgia,serif",
           fontStyle:'italic', letterSpacing:'2px',
           marginBottom:36,
+          textShadow:'0 2px 12px rgba(0,0,0,0.6)',
         }}>
-          One stop for your money handling.
+          Organize your money before it organizes you.
         </p>
 
         {/* Scroll hint */}
@@ -322,7 +323,7 @@ function HeroSection({ scrollProgress, heroRef }) {
           display:'flex', flexDirection:'column', alignItems:'center', gap:6,
           animation:'heroFloat 2.2s ease-in-out infinite',
         }}>
-          <span style={{ fontSize:10, letterSpacing:'3px', textTransform:'uppercase', color:'rgba(212,169,74,0.45)', fontFamily:'monospace' }}>
+          <span style={{ fontSize:11, letterSpacing:'3px', textTransform:'uppercase', color:'rgba(212,169,74,0.75)', fontFamily:'monospace' }}>
             scroll to organize
           </span>
           <div style={{ width:1, height:32, background:'linear-gradient(to bottom, rgba(212,169,74,0.6), transparent)' }} />
@@ -341,7 +342,7 @@ function HeroSection({ scrollProgress, heroRef }) {
           fontSize:13, letterSpacing:'3px', textTransform:'uppercase',
           color:'rgba(212,169,74,0.7)', fontFamily:'monospace',
           marginBottom:6,
-        }}> </p>
+        }}>MUDRA is organizing your money</p>
         <div style={{ display:'flex', gap:8, justifyContent:'center' }}>
           {NOTES_META.map((n,i) => (
             <div key={i} style={{
@@ -468,7 +469,7 @@ function FeatureCard({ feat, index }) {
       }}>{feat.title}</h3>
       <p style={{
         fontSize:14, lineHeight:1.7,
-        color:'#7070a0', fontFamily:"'Cabinet Grotesk',system-ui,sans-serif",
+        color:'#b8b8cc', fontFamily:"'Cabinet Grotesk',system-ui,sans-serif",
       }}>{feat.desc}</p>
     </div>
   )
@@ -507,12 +508,12 @@ function FeaturesSection({ featRef }) {
             color:'#f0f0f8', letterSpacing:'-0.5px', lineHeight:1.15,
             margin:0,
           }}>
-            Get Control<br />
+            Everything your money<br />
             <span style={{
               background:'linear-gradient(135deg,#d4a94a,#f5e6c8)',
               WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
               backgroundClip:'text',
-            }}>over chaos.</span>
+            }}>needs to behave.</span>
           </h2>
         </div>
 
