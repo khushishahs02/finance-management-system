@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mudra-finance-g7rp.vercel.app/sitemap.xml
