@@ -30,7 +30,7 @@ function StatCard({ label, value, icon: Icon, color = 'jade', sub }) {
           <Icon size={16} />
         </div>
       </div>
-      <p className="font-display text-2xl font-bold text-text-primary">{value}</p>
+      <p className="font-display font-bold text-text-primary" style={{ fontSize: 'clamp(14px, 3.5vw, 24px)', lineHeight: 1.2, wordBreak: 'break-all' }}>{value}</p>
       {sub && <p className="text-text-muted text-xs mt-1">{sub}</p>}
     </div>
   )
@@ -225,7 +225,7 @@ export default function Dashboard() {
       {/* Header */}
       <div className="animate-fade-up">
         <p className="text-text-muted text-sm font-mono mb-1">{greeting()},</p>
-        <h1 className="page-title">{profile?.name ?? 'there'} 👋</h1>
+        <h1 className="page-title">{profile?.name ?? user?.user_metadata?.name ?? user?.user_metadata?.full_name ?? 'there'} 👋</h1>
         <p className="text-text-secondary text-sm mt-1">
           Here's your financial overview for {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}
         </p>

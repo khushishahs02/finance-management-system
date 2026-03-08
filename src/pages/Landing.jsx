@@ -308,8 +308,8 @@ function HeroSection({ scrollProgress, heroRef }) {
           }}>MUDRA</h1>
         </div>
         <p style={{
-          fontSize:'clamp(16px,2vw,22px)',
-          color:'rgba(200,200,210,0.92)',
+          fontSize:'clamp(18px,2.5vw,26px)',
+          color:'rgba(210,210,220,0.95)',
           fontFamily:"'Cormorant Garamond',Georgia,serif",
           fontStyle:'italic', letterSpacing:'2px',
           marginBottom:36,
@@ -323,7 +323,7 @@ function HeroSection({ scrollProgress, heroRef }) {
           display:'flex', flexDirection:'column', alignItems:'center', gap:6,
           animation:'heroFloat 2.2s ease-in-out infinite',
         }}>
-          <span style={{ fontSize:11, letterSpacing:'3px', textTransform:'uppercase', color:'rgba(212,169,74,0.75)', fontFamily:'monospace' }}>
+          <span style={{ fontSize:13, letterSpacing:'3px', textTransform:'uppercase', color:'rgba(212,169,74,0.85)', fontFamily:'monospace' }}>
             scroll to organize
           </span>
           <div style={{ width:1, height:32, background:'linear-gradient(to bottom, rgba(212,169,74,0.6), transparent)' }} />
@@ -433,13 +433,13 @@ function FeatureCard({ feat, index }) {
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
-        flex:'1', minWidth:0,
+        flex:'1', minWidth:'min(280px, 100%)',
         background: hov
           ? `radial-gradient(ellipse at 30% 30%, ${feat.glow}, rgba(14,14,26,0.95))`
           : 'rgba(14,14,26,0.8)',
         border: `1px solid ${hov ? feat.color+'44' : 'rgba(212,169,74,0.1)'}`,
         borderRadius:24,
-        padding:'36px 32px',
+        padding:'clamp(20px,4vw,36px) clamp(16px,4vw,32px)',
         backdropFilter:'blur(16px)',
         boxShadow: hov
           ? `0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px ${feat.color}22`
@@ -469,7 +469,7 @@ function FeatureCard({ feat, index }) {
       }}>{feat.title}</h3>
       <p style={{
         fontSize:14, lineHeight:1.7,
-        color:'#b8b8cc', fontFamily:"'Cabinet Grotesk',system-ui,sans-serif",
+        color:'#c8c8dc', fontFamily:"'Cabinet Grotesk',system-ui,sans-serif",
       }}>{feat.desc}</p>
     </div>
   )
@@ -495,15 +495,15 @@ function FeaturesSection({ featRef }) {
         backgroundSize:'60px 60px',
       }} />
 
-      <div style={{ maxWidth:1100, margin:'0 auto', padding:'0 40px' }}>
+      <div style={{ maxWidth:1100, margin:'0 auto', padding:'0 clamp(16px,4vw,40px)' }}>
         {/* Section heading */}
         <div style={{ textAlign:'center', marginBottom:64 }}>
           <p style={{
             fontSize:11, letterSpacing:'4px', textTransform:'uppercase',
-            color:'rgba(212,169,74,0.5)', fontFamily:'monospace', marginBottom:14,
+            color:'rgba(212,169,74,0.75)', fontFamily:'monospace', marginBottom:14,
           }}>What MUDRA does</p>
           <h2 style={{
-            fontSize:'clamp(28px,4vw,48px)', fontWeight:800,
+            fontSize:'clamp(22px,5vw,48px)', fontWeight:800,
             fontFamily:"'Clash Display',system-ui,sans-serif",
             color:'#f0f0f8', letterSpacing:'-0.5px', lineHeight:1.15,
             margin:0,
@@ -518,7 +518,7 @@ function FeaturesSection({ featRef }) {
         </div>
 
         {/* Feature cards */}
-        <div style={{ display:'flex', gap:20, flexWrap:'wrap' }}>
+        <div style={{ display:'flex', gap:16, flexWrap:'wrap' }}>
           {FEATURES.map((f,i) => <FeatureCard key={i} feat={f} index={i} />)}
         </div>
 
@@ -545,7 +545,7 @@ function FeaturesSection({ featRef }) {
             }}>
             Get Started with MUDRA →
           </button>
-          <p style={{ fontSize:11, color:'rgba(212,169,74,0.3)', marginTop:12, fontFamily:'monospace', letterSpacing:'1px' }}>
+          <p style={{ fontSize:12, color:'rgba(212,169,74,0.55)', marginTop:12, fontFamily:'monospace', letterSpacing:'1px' }}>
             Free · No credit card required
           </p>
         </div>

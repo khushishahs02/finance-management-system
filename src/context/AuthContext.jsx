@@ -13,7 +13,7 @@ async function logUserToSheet(user) {
       name:       user.user_metadata?.name ?? user.email ?? 'Unknown',
       email:      user.email ?? '',
       signedUpAt: user.created_at ?? '',
-      lastLogin:  new Date().toISOString(),
+      lastLogin:  new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
       provider:   user.app_metadata?.provider ?? 'email',
     })
     const url = `${SHEET_WEBHOOK}?${params.toString()}`
@@ -50,7 +50,25 @@ export function AuthProvider({ children }) {
   }, [])
 
   async function fetchProfile(userId) {
+    // First try to get existing profile
     const { data } = await supabase.from('users').select('*').eq('id', userId).single()
+
+    // If name is missing (common for email signups), upsert it from auth metadata
+    if (data && !data.name) {
+      const { data: { user: authUser } } = await supabase.auth.getUser()
+      const metaName = authUser?.user_metadata?.name ?? authUser?.user_metadata?.full_name ?? null
+      if (metaName) {
+        const { data: updated } = await supabase
+          .from('users')
+          .update({ name: metaName })
+          .eq('id', userId)
+          .select()
+          .single()
+        setProfile(updated ?? data)
+        setLoading(false)
+        return
+      }
+    }
     setProfile(data)
     setLoading(false)
   }

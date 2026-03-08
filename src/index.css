@@ -247,3 +247,90 @@
 }
 .animate-fade-up { animation: fadeUp 0.5s ease forwards; }
 .animate-fade-in { animation: fadeIn 0.3s ease forwards; }
+
+/* ══════════════════════════════════════════════
+   MOBILE RESPONSIVE FIXES
+   These fix the layout on screens < 1024px
+══════════════════════════════════════════════ */
+@media (max-width: 1023px) {
+
+  /* Force desktop sidebar to be invisible & take no space */
+  #desktop-sidebar {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+  }
+
+  /* Page containers — full width with comfortable padding */
+  .page-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 20px !important;
+    padding-bottom: 24px !important;
+    max-width: 100% !important;
+  }
+
+  /* Stat/summary cards — stack into 2-column grid on mobile */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Cards inside pages — reduce padding on mobile */
+  .card {
+    padding: 14px !important;
+  }
+
+  /* Tables — allow horizontal scroll instead of squishing */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Page titles — responsive size */
+  .page-title {
+    font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+  }
+
+  /* Modals / dialogs — full width on mobile */
+  [role="dialog"], .modal-content {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    margin: 0 auto !important;
+  }
+
+  /* Flex rows that should stack on mobile */
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+
+  /* Buttons in header rows — smaller on mobile */
+  .page-actions button {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .page-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* Stack stats to single column if really small */
+  .stats-grid-sm {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-title {
+    font-size: 1.15rem !important;
+  }
+}
