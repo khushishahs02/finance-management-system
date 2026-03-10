@@ -5,15 +5,15 @@
 
 *Because money disappears faster than expected — and Excel sheets are not fun.*
 
-🌐 **Live App → [mudra-finance.vercel.app](https://mudra-finance-g7rp.vercel.app)**
+🌐 **Live App → [mudra-finance.vercel.app](https://mudra-finance.vercel.app)**
 📱 **Works on mobile, tablet, and desktop**
 
 
 [![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-5-646cff?style=flat-square&logo=vite)](https://vitejs.dev)
 [![Supabase](https://img.shields.io/badge/Supabase-Auth%20%2B%20DB-3ecf8e?style=flat-square&logo=supabase)](https://supabase.com)
-[![Live](https://img.shields.io/badge/Live-mudra--finance-black?style=flat-square&logo=vercel)](https://mudra-finance-g7rp.vercel.app)
-![Mobile](https://img.shields.io/badge/Mobile-Responsive-4ade9a?style=flat-square&logo=smartphone)](https://mudra-finance-g7rp.vercel.app)
+[![Live](https://img.shields.io/badge/Live-mudra--finance-black?style=flat-square&logo=vercel)](https://mudra-finance.vercel.app)
+[![Mobile](https://img.shields.io/badge/Mobile-Responsive-4ade9a?style=flat-square&logo=smartphone)](https://mudra-finance.vercel.app)
 
 
 </div>
@@ -111,85 +111,11 @@ User visits MUDRA
   │  Email Confirmation │      │  Google Sheets Log   │
   │  (if email signup)  │      │  (name, email,       │
   └──────────┬──────────┘      │   login time,        │
-             │ confirmed        │   provider)          │
+             │ confirmed       │   provider)          │
              ▼                 └──────────────────────┘
   ┌─────────────────────┐
   │     Dashboard       │
   └─────────────────────┘
-```
-
-### 2 — Data Flow (User → App → Database)
-
-```
-User Action (add transaction, set budget, etc.)
-            │
-            ▼
-  ┌─────────────────────┐
-  │   React Component   │
-  │   (form / input)    │
-  └──────────┬──────────┘
-             │
-             ▼
-  ┌─────────────────────┐
-  │   Supabase Client   │
-  │   (supabaseClient.js│
-  └──────────┬──────────┘
-             │
-             ▼
-  ┌─────────────────────────────────┐
-  │         Supabase Backend        │
-  │                                 │
-  │  ┌──────────┐  ┌─────────────┐ │
-  │  │   Auth   │  │  PostgreSQL │ │
-  │  │  (users) │  │  Database   │ │
-  │  └──────────┘  └─────────────┘ │
-  │         Row Level Security      │
-  │    (each user sees only         │
-  │         their own data)         │
-  └─────────────────────────────────┘
-             │
-             ▼
-  Data returned → React state updated → UI re-renders
-```
-
-### 3 — Hero Scroll Animation Flow
-
-```
-Page Load
-    │
-    ▼
-50 currency notes initialised
-at random positions across viewport
-    │
-    ▼
-┌──────────────────────────┐
-│   requestAnimationFrame  │◄─────────────────┐
-│   loop running at 60fps  │                  │
-└────────────┬─────────────┘                  │
-             │                                │
-    ┌────────▼────────┐              ┌────────┴────────┐
-    │  Cursor nearby? │──── YES ────►│  Apply repulsion│
-    └────────┬────────┘              │  force to note  │
-             │ NO                    └─────────────────┘
-             ▼
-    ┌─────────────────┐
-    │  Scroll detected│
-    └────────┬────────┘
-             │
-    scroll progress 0 → 1
-             │
-             ▼
-    ┌─────────────────────────────┐
-    │  Interpolate note position  │
-    │  from: random scatter       │
-    │  to:   denomination stacks  │
-    │  (₹10, ₹20, ₹50, ₹100...)  │
-    └─────────────────────────────┘
-             │
-             ▼
-    Notes form neat stacks
-    → Features section appears
-    → Login section below
 ```
 
 ---
@@ -205,41 +131,6 @@ at random positions across viewport
 | **Security** | Row Level Security (RLS) | Each user sees only their own data |
 | **Deployment** | Vercel | Hosting and CI/CD |
 | **Analytics** | Google Sheets + Apps Script | Developer-side user login tracking |
-| **AI Assistance** | Claude (Anthropic) | UI design and implementation support |
-
----
-
-## Project Structure
-
-```
-finance-app/
-├── public/
-│   └── khushi.jpg               # Developer photo (About page)
-├── src/
-│   ├── components/
-│   │   └── Layout.jsx           # Sidebar navigation shell
-│   ├── context/
-│   │   └── AuthContext.jsx      # Auth state + Supabase calls
-│   ├── lib/
-│   │   └── supabaseClient.js    # Supabase initialisation
-│   ├── pages/
-│   │   ├── Landing.jsx          # Hero + Features + Login wrapper
-│   │   ├── Login.jsx            # Auth form (sign in / sign up)
-│   │   ├── Dashboard.jsx        # Overview page
-│   │   ├── Accounts.jsx         # Account management
-│   │   ├── Transactions.jsx     # Transaction log
-│   │   ├── Budgets.jsx          # Budget tracker
-│   │   ├── Goals.jsx            # Savings goals
-│   │   ├── Recurring.jsx        # Recurring expenses
-│   │   └── About.jsx            # Developer info + contact
-│   ├── App.jsx                  # Route definitions
-│   ├── main.jsx                 # React entry point
-│   └── index.css                # Global styles
-├── index.html
-├── vite.config.js
-├── tailwind.config.js
-└── .env                         # Supabase keys (not committed)
-```
 
 ---
 
@@ -254,8 +145,8 @@ finance-app/
 
 ```bash
 # Clone the repository
-git clone https://github.com/khushishahs02/mudra-finance.git
-cd mudra-finance/finance-app
+git clone https://github.com/khushishahs02/finance-management-system.git
+cd finance-management-system/finance-app
 
 # Install dependencies
 npm install
@@ -303,7 +194,7 @@ Enable **Row Level Security** on all tables and create policies so users can onl
 
 The app is live and deployed on **Vercel**.
 
-🌐 **[https://mudra-finance-g7rp.vercel.app](https://mudra-finance-g7rp.vercel.app)**
+🌐 **[https://mudra-finance.vercel.app](https://mudra-finance.vercel.app)**
 
 **When ready to deploy:**
 
@@ -337,7 +228,7 @@ vercel
 
 I started this project primarily to gain hands-on experience — and I honestly did not know much about Claude when I began.
 
-By the end of it, Claude became the best AI tool I have ever used. It solved my problems effortlessly, explained things clearly, and never made me feel lost. Through building MUDRA, I learned so many things I had never touched before:
+It solved my problems effortlessly, explained things clearly. Through building MUDRA, I learned so many things I had never touched before:
 
 - Working with **Supabase** for authentication and databases
 - Understanding **API keys** and how to connect services securely
